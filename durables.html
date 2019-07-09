@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Poverty measurement</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="R.Andres Castaneda (based on the slides of many others that teach this class before me)" />
+    <meta name="date" content="2019-07-09" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Poverty measurement
+## Durable Goods
+### R.Andres Castaneda (based on the slides of many others that teach this class before me)
+### The World Bank
+### 2019-07-09
+
+---
+
+
+
+
+
+# Outline
+
+- Key References
+
+- Definition:  What are durables?
+
+- Why measure durables?
+
+- How to measure durables?
+
+  - Flow of services
+  
+  - User cost of durables
+  
+  - Data requirements
+
+- Caveats
+
+- Summary
+
+---
+class: center
+
+# Key References
+
+Deaton, A., and S. Zaidi. 2002. "Guidelines for constructing consumption aggregates for welfare analysis." _LSMS Working Paper_ No. 135, 
+
+Amendola, N., and G. Vecchi. 2014. "Durable goods and poverty measurement." _World Bank Policy Research Working Paper_ 7105.
+
+---
+# Three definitions
+
+- A durable good is a consumption good that can deliver _useful services to a consumer through repeated use over an extended period of time_ (Diewert, 2009)
+
+--
+
+- A consumer durable is a good that _may be used for purposes of consumption repeatedly or continuously over a period of a year or more_ (SNA, 200).
+
+--
+
+- Durable goods are consumer products that  
+  - withstand wear and tear or decay
+  - can be used over a relatively long period without being depleted or consumed
+
+---
+# Why measure durables?
+
+- Long-lived goods (automobiles, appliances, furniture) have a positive and significant impact on living standards.
+  - Time-saving (e.g. household appliances, transport means)
+  - Entertainment (TV, DVD, etc) and communications (Phones)
+
+- Poor households sometimes devote some expenditures to non-food items, including durable goods (Haughton and Khandker, 2009)
+
+- Their inclusion ensures utility consistency.
+
+- Failure to include durable goods may underestimate inequality (to be discussed later).
+
+---
+
+# How to measure durables
+
+- NOT appropriate to use purchase prices of durables
+
+- **Principle**: measure in monetary terms the flow of services that the houfehold from durable goods. 
+
+.center[![sleepy](https://media.giphy.com/media/xT8qBvH1pAhtfSx52U/giphy.gif)]
+
+---
+
+# How to measure durables
+![durables_life](./img/durables_life.png)
+
+- The durables’ service flow exceeds the reference period of the welfare aggregate 
+
+- The purchasing price reflects the value of the durable for its entire life
+
+- Need to capture the value of the flow of the service during the reference period
+
+---
+
+# Theoretical framework
+
+### Acquisition approach
+
+If the good is purchased during the reference period, its entire value is attributed to the household welfare aggregate. 
+
+### Rental equivalence
+
+If a complete set of markets for the services of durables exists, we can use the market rental value of the goods.
+
+### User cost
+_The annual cost_ of holding the stock of each durable good. 
+
+---
+# The Annual Cost approach
+
+We need to add the annual cost of holding the stock of each durable.
+
+Based on a conceptual experiment in which the household buys the durable good at the beginning of each year, and then sell it at year’s end
+
+This will depend on prices at the beginning and end of year, interest rates (opportunity cost) and the rate of depreciation
+
+---
+class: center
+![dg_reports](./img/dg_reports.png)
+
+???
+
+95 reports
+Focus on user cost 
+
+---
+# User cost of durables
+
+`$$UC_d=S{_t}p{_t}(r_t - \pi_t + \delta)$$`
+
+`\(S_t\)`: Quantity of the durable
+
+`\(p_t\)`: Price of the durable at the time of purchase
+
+`\(r_t\)`: Nominal interest rate
+
+`\(r_t\)`: Nominal interest rate
+
+`\(\pi_t\)`: Inflation rate
+
+`\(\delta\)`: Depreciation rate
+
+
+`$$UC=\sum_{d=1}^D{S_{td}p_{td}(r_t - \pi_t + \delta_d)}$$`
+
+`\(D\)`: Total number of durables considered
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
