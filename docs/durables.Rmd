@@ -252,8 +252,37 @@ Where, $r_t$ is the real interest rate in period $t$.
 
 The user cost can be ingterpreted as the opportunity cost of owning for one period the durable good instead of selling it at the beginning of period $t$. 
 
+---
+```{r dg_reports_data, echo = FALSE}
+df <- data.frame(
+  type = c("No allowance", "Acquisition", "User cost", "unspecified"), 
+  share = c(18.9, 15.9, 43.3, 21.9)
+)
+lbls <- paste0(df[["type"]], "\n", df[["share"]], "%")
+
+```
+## Durable goods in World Bank's selected poverty assessment reports
+```{r dg_reports,  echo = FALSE, fig.height=6, dev='svg'}
+pie(df[["share"]], labels = lbls)
+```
+
+???
+
+95 reports
+Focus on user cost 
 
 ---
+# A quick Exercise
+
+Calculate the (annual) user cost of a watch that you purchased at $25 a year ago, and it is worth $20 right now. Assume that real interest rate is 10%. 
+
+???
+25-20=5, 25*(10%)=$2.5, $7.5 user cost per year
+(5)/25=20%
+3. Overestimate consumption, underestimate poverty
+
+---
+
 ### User cost of durables
 
 The previous eqution could be rewritten as follow for the total number of durables, 
@@ -274,85 +303,104 @@ $D$: Total number of durables considered
 
 ---
 
-```{r dg_reports_data, echo = FALSE}
-df <- data.frame(
-  type = c("No allowance", "Acquisition", "User cost", "unspecified"), 
-  share = c(18.9, 15.9, 43.3, 21.9)
-)
-lbls <- paste0(df[["type"]], "\n", df[["share"]], "%")
+# components of the user cost
 
-```
-## Durable goods in World Bank's selected poverty assessment reports
-```{r dg_reports,  echo = FALSE, fig.height=6, dev='svg'}
-pie(df[["share"]], labels = lbls)
-```
+- **Nominal interest rate** $(i_t)$: There are many options. The most common are:
+  - Interest rate on safe assets like yeilds of governmnet bonds (If one assumes that risk aversion and wealth are negatively correlate (Arrow 1971) ). 
+  - Interest rates on loans of durable goods like cars or other major durables. 
+--
 
-???
+- **Quantity of the durable** $(S_t)$: Comes from the survey. Sometimes it is not available. 
+--
 
-95 reports
-Focus on user cost 
+- **Price of the durable at the time of purchase** $(p_t)$: Comes from the survey. 
+--
 
----
+- **Inflation rate** $(\pi_t)$: Generally, the CPI is used.
+--
 
-# A quick Exercise
-
-Calculate the (annual) user cost of a watch that you purchased at $25 a year ago, and it is worth $20 right now. Assume that real interest rate is 10%. 
-
-???
-25-20=5, 25*(10%)=$2.5, $7.5 user cost per year
-(5)/25=20%
-3. Overestimate consumption, underestimate poverty
+- **Depreciation rate** $(\delta)$: .red[Tricky part that will be discussed bellow]
 
 ---
-# Empirical implementation
+# Depreciation rate
+
+In general, the relationship between the price in $t$ of thea  good $v$-year old, $(p_{v,t})$, and its market value as new, $(p_{0,t})$, may be discribed as, 
+
+$$p_{v,t} = \prod_{i=1}^v(1- \delta_i)p_{0,t}$$
+
+- This relationship depends on the sequence $\{\delta_i\}_{i=1}^v$, which has many ways of calculate it. 
+ - Geometric depreciation model
+ - Straight line depreciation
+ - "light bulb" depreciation
+ - Mixture depreciation model
+
+???
+For a longer discussion of all the methods see Amendola and Vecchi (2014). 
+
+---
+# Depreciation rate
+
+In general, the relationship between the price in $t$ of thea  good $v$-year old, $(p_{v,t})$, and its market value as new, $(p_{0,t})$, may be discribed as, 
+
+$$p_{v,t} = \prod_{i=1}^v(1- \delta_i)p_{0,t}$$
+
+- This relationship depends on the sequence $\{\delta_i\}_{i=1}^v$, which has many ways of calculate it. 
+ - .red[Geometric depreciation model]
+ - Straight line depreciation
+ - "light bulb" depreciation
+ - Mixture depreciation model
+
+???
+For a longer discussion of all the methods see Amendola and Vecchi (2014). 
+
+---
+## Empirical implementation of the .blue[geometric depreciation model]
+- We assume that the depreciation rate is constant over time, so $\delta_i = \delta$ for every $i$.
 
 ## case 1
 
-### From the survey:
-- Current Value for each item = $p_t$
-- Age of each item in years = $T$
-- Initial Value for each item = $p_{t-T}$
+#### From the survey:
+- Current Value for each item = $p_{v,t}$
+- Age of each item in years = $v$
+- Initial Value for each item = $p_{0,t}$
 
-### From other sources:
+#### From other sources:
 - Nominal interest rate = $r_t$
 - Inflation rate = $\pi_t$
 
 ---
-# Empirical implementation
 
 ## Solution Case 1
 Estimation of depreciation rate:
 
-$$\delta-\pi = 1 - (\frac{p_t}{p_{t-T}})^{1/T}$$
-- Household-specific values are not recommended
-- Minimize the influence of outliers use median value by item
-- However, what about the utility ranking of two households with the same good but living in very different geographical regions?
+$$\delta - \pi = 1 - (\frac{p_{v,t}}{p_{o,t}})^\frac{1}{v}$$
+- In order to minimize the influence of any outliers in the data, it is better to use the _median_ value of depreciation rates of all the goods collected in the survey. 
+- Thus, household-specific values are not recommended. 
 
 ---
-# Empirical implementation
-
 ## case 2
 
 ### From the survey:
 - Current Value for each item = $p_t^d$
 - Age of each item in years = $T$
+- .red[value of the item when new is not available]
 
 ### From other sources:
 - Nominal interest rate = $r_t$
 - Inflation rate = $\pi_t$
 
 ---
-# Empirical implementation
-
 ## Solution Case 2
 
-- Calculate the remaining life of each good = $2\bar{T}-T$
-  - Where $\bar{T}$ is the average age of each durable good. 
-  - $2\bar{T}$ is the average lifetime of each furable good
-  _Assumption:_ purchases are uniformly distributed throughout time. 
+- Calculate the average _age_ of each durable good $\bar{v}$
+
+- Estimate the average _lifetime_ of each durable good as $2\bar{v}$
+  - _Assumption:_ purchases are uniformly distributed throughout time
+  
+- The, the remaining life of each good is $2\bar{v} - v$
 
 - a rough estimate would be
-$$V_d^h = \sum_{d=1}^D \frac{p_t^d}{2\bar{T}-T}$$
+$$\delta - \pi = 1 - (\frac{p_{v,t}}{2\bar{v} - v})^\frac{1}{v}$$
 
 ---
 # Estimation problems
@@ -371,3 +419,7 @@ $$V_d^h = \sum_{d=1}^D \frac{p_t^d}{2\bar{T}-T}$$
 3. We are interested in the use of a durable good that contributes to welfare
 4. Data requirements are high – simplifying assumptions may be necessary.
 5. Takes no account of often considerable transaction costs
+
+---
+
+.center[![thank_you](https://media.giphy.com/media/nU704Y2jeFOHm/giphy.gif)]
