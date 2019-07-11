@@ -4,7 +4,7 @@
     <title>Poverty measurement</title>
     <meta charset="utf-8" />
     <meta name="author" content="R.Andres Castaneda (based on the slides of many others that teach this class before me)" />
-    <meta name="date" content="2019-07-10" />
+    <meta name="date" content="2019-07-11" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
     <link href="libs/remark-css/hygge.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 ## Durable Goods
 ### R.Andres Castaneda (based on the slides of many others that teach this class before me)
 ### The World Bank
-### 2019-07-10
+### 2019-07-11
 
 ---
 
@@ -39,23 +39,34 @@ class: center, middle, inverse, title-slide
   
   - User cost of durables
   
-  - Data requirements
+- Data requirements
 
 - Caveats
 
-- Summary
+- Conclusion
 
 ---
-class: center
+layout: true
 
 # Key References
+
+---
 
 Deaton, A., and S. Zaidi. 2002. "Guidelines for constructing consumption aggregates for welfare analysis." _LSMS Working Paper_ No. 135, 
 
 Amendola, N., and G. Vecchi. 2014. "Durable goods and poverty measurement." _World Bank Policy Research Working Paper_ 7105.
 
+
 ---
-# Three definitions
+
+Deaton, A., and S. Zaidi. 2002. "Guidelines for constructing consumption aggregates for welfare analysis." _LSMS Working Paper_ No. 135, 
+
+.red[Amendola, N., and G. Vecchi. 2014. "Durable goods and poverty measurement." _World Bank Policy Research Working Paper_ 7105.]
+
+---
+layout: false
+
+# Definitions
 
 - A durable good is a consumption good that can deliver _useful services to a consumer through repeated use over an extended period of time_ (Diewert, 2009)
 
@@ -65,9 +76,15 @@ Amendola, N., and G. Vecchi. 2014. "Durable goods and poverty measurement." _Wor
 
 --
 
+## So,...
 - Durable goods are consumer products that  
   - withstand wear and tear or decay
   - can be used over a relatively long period without being depleted or consumed
+
+???
+The main characteristic of a durable good does not depend on its physical durability (property shared by many other consumption goods), but by the fact that, like capital goods, it is _productive_ for two or more periods. 
+
+Example: coal is highly durable in a physical sense but it can be burnt just once. 
 
 ---
 # Why measure durables?
@@ -83,19 +100,54 @@ Amendola, N., and G. Vecchi. 2014. "Durable goods and poverty measurement." _Wor
 - Failure to include durable goods may underestimate inequality (to be discussed later).
 
 ---
+# Essence of the problem
 
+There is an inconsistency between the _reference period_ and the period of time in which durable goods deliver their utility to the consumer. 
+
+--
+.pull-left[
+![what](https://media.giphy.com/media/GmdFiZtdJtQty/giphy.gif)
+]
+
+--
+.pull-right[
+![sleepy](https://media.giphy.com/media/xT8qBvH1pAhtfSx52U/giphy.gif)
+]
+
+---
+# Let's see
+
+According to Deaton (1997, 151), "_we need to decide the reference period for welfare measurement, whether someone is poor if they go without adequate consumption or income for a week, a month, or a year_"
+
+- The same reference period must be applied to all the components of the welfare aggregate. 
+
+- Even if durables are not purchased during the period of reference, households derived _utility_ from those durable goods that were bought in previous periods. 
+
+---
 # How to measure durables
 
-- NOT appropriate to use purchase prices of durables
+- Market price of a durable good is not adequate becuase the it corresponds to the value of its _entire_ economic life, while what we need is the value _of the use_ during the period of reference.
 
-- **Principle**: measure in monetary terms the flow of services that the houfehold from durable goods. 
+- **Principle**: we need to estimate the _consumption flow_ of durable goods, which is the benefit accrouing to the household from the ownership of durable goods, limited to the reference period. 
 
-.center[![sleepy](https://media.giphy.com/media/xT8qBvH1pAhtfSx52U/giphy.gif)]
+![durables_life](./img/durables_life.png)
+
+???
+
+When it comes to measuring living standards, poverty and inequality, the estimation of the
+value of consumer durables is also crucial. The use of the purchase price instead of the
+consumption flow leads to overestimate the effect of economic cycle on the household
+welfare, to underestimate absolute poverty, and most likely to bias the poverty profile
+(Deaton and Zaidi 2002). 
+
+A well-documented study on Russia, for instance, shows that the
+impact on inequality can be very large: the Gini index of expenditure increases from 32
+percent to 44 percent when the full purchase value of durables is included instead of its use
+value (World Bank 2005: 9)
 
 ---
 
-# How to measure durables
-![durables_life](./img/durables_life.png)
+# In short, 
 
 - The durables’ service flow exceeds the reference period of the welfare aggregate 
 
@@ -104,32 +156,127 @@ Amendola, N., and G. Vecchi. 2014. "Durable goods and poverty measurement." _Wor
 - Need to capture the value of the flow of the service during the reference period
 
 ---
-
 # Theoretical framework
 
-### Acquisition approach
+### Consumption flow `\(CF\)`
+The consumption flow could be represented as follows,
+
+`$$CF_t = k_{v,t}^s \times p_{v,t}^s$$`
+
+where, 
+- `\(p_{v,t}^s\)` is the market price of the good in time `\(t\)`; 
+
+- `\(k_{v,t}^s\)` is a fraction of the market price, 
+
+  - which is accounted as the _consumption flow_ of the good. 
+  
+- `\((t-v)\)` refers the year in which the good was manufactured; 
+
+- `\((t-s)\)` the year in which the good was purchased. 
+
+---
+## Three approaches to estimate `\(CF\)`
+
+- Acquisition approach
+
+- Rental equivalence
+
+- User cost
+
+---
+## Acquisition approach
 
 If the good is purchased during the reference period, its entire value is attributed to the household welfare aggregate. 
 
-### Rental equivalence
+`$$k_{v,t}^s(a) = \begin{cases}
+  1 \text{ if } s = 0 \\ 
+  0 \text{ if } s &gt; 0 
+  \end{cases}$$`
+- `\(CF = 0\)`  if household does not purchase the durable good during time `\(t\)` (i.e., `\(s &gt; 0\)`), 
+
+- `\(CF_t = P_{v,t}^0\)`, otherwise. 
+
+- `\(P_{v,t}^0\)` captures the current value of _all services_ provided by the durable good. So,...
+
+--
+
+- This approach assigns the household the entire stream of current and future productibve services of the durable in year `\(t\)`. 
+
+???
+
+the acquisition approach is clearly distortionary: it underestimates the
+welfare of households that owns used durable goods with respect to households who
+happened to purchase durable goods in the current year
+
+ both the level and the budget shares of durables tend to mirror the business cycle. (Why?) Because, households tend to postpone the purchase of durables when the economy slows down, and
+to increase it when the economy boosts
+
+---
+
+## Rental equivalence
 
 If a complete set of markets for the services of durables exists, we can use the market rental value of the goods.
 
-### User cost
-_The annual cost_ of holding the stock of each durable good. 
+`$$k_{v,t}^s(r) = \frac{R_{v,t}}{P_{v,t}^s}$$`
+where, 
+
+- `\(R_{v,t}\)` is the market rental value of the `\(v\)`-year old durable good. 
+
+- `\(\frac{R_{v,t}}{P_{v,t}^s}\)` rental ratio with respect to the market value of the durable owned by the household, also known as _capitalization rate_. 
+
+- `\(CF_t = R_{v,t}\)`
+
+???
+
+If markets are competitive and the economy is in equilibrium, then the market rental value
+`\(R_{v,t}\)` measures the consumption flow from the durable owned by the household. (without including taxes and transaction costs)
+
+(a) one must assume the existence of a complete set of markets for the services of the durables owned by the household; 
+
+(b) markets must be competitive and 
+
+(c) the economy must be in equilibrium. 
+
+If assumption (a) does not hold we cannot apply the method and if one of the other two assumptions is violated the market rental value does not reflect necessarily the household welfare gain from using the durable in period t. 
 
 ---
-# The Annual Cost approach
 
-We need to add the annual cost of holding the stock of each durable.
+## User cost
+_The annual cost_ of holding the stock of each durable good is based on a conceptual experiment in which the household buys the durable good at the beginning of each year `\(t\)`, and then sell it at the end of the year `\(t+1\)`.
 
-Based on a conceptual experiment in which the household buys the durable good at the beginning of each year, and then sell it at year’s end
+`$$UC_t = (1+r_t)p_{v,t}^s - p_{v+1,t}^{s+1}$$`
 
-This will depend on prices at the beginning and end of year, interest rates (opportunity cost) and the rate of depreciation
+Where, `\(r_t\)` is the real interest rate in period `\(t\)`. 
+
+???
+
+The user cost can be ingterpreted as the opportunity cost of owning for one period the durable good instead of selling it at the beginning of period `\(t\)`. 
+
 
 ---
-class: center
-![dg_reports](./img/dg_reports.png)
+### User cost of durables
+
+The previous eqution could be rewritten as follow for the total number of durables, 
+
+`$$UC=\sum_{d=1}^D(S_{td}\times p_{td}(i_t - \pi_t + \delta_d))$$`
+
+`\(S_t\)`: Quantity of the durable
+
+`\(p_t\)`: Price of the durable at the time of purchase
+
+`\(i_t\)`: Nominal interest rate
+
+`\(\pi_t\)`: Inflation rate
+
+`\(\delta\)`: Depreciation rate
+
+`\(D\)`: Total number of durables considered
+
+---
+
+
+## Durable goods in World Bank's selected poverty assessment reports
+![](durables_files/figure-html/dg_reports-1.svg)&lt;!-- --&gt;
 
 ???
 
@@ -137,26 +284,84 @@ class: center
 Focus on user cost 
 
 ---
-# User cost of durables
 
-`$$UC_d=S{_t}p{_t}(r_t - \pi_t + \delta)$$`
+# A quick Exercise
 
-`\(S_t\)`: Quantity of the durable
+Calculate the (annual) user cost of a watch that you purchased at $25 a year ago, and it is worth $20 right now. Assume that real interest rate is 10%. 
 
-`\(p_t\)`: Price of the durable at the time of purchase
+???
+25-20=5, 25*(10%)=$2.5, $7.5 user cost per year
+(5)/25=20%
+3. Overestimate consumption, underestimate poverty
 
-`\(r_t\)`: Nominal interest rate
+---
+# Empirical implementation
 
-`\(r_t\)`: Nominal interest rate
+## case 1
 
-`\(\pi_t\)`: Inflation rate
+### From the survey:
+- Current Value for each item = `\(p_t\)`
+- Age of each item in years = `\(T\)`
+- Initial Value for each item = `\(p_{t-T}\)`
 
-`\(\delta\)`: Depreciation rate
+### From other sources:
+- Nominal interest rate = `\(r_t\)`
+- Inflation rate = `\(\pi_t\)`
 
+---
+# Empirical implementation
 
-`$$UC=\sum_{d=1}^D{S_{td}p_{td}(r_t - \pi_t + \delta_d)}$$`
+## Solution Case 1
+Estimation of depreciation rate:
 
-`\(D\)`: Total number of durables considered
+`$$\delta-\pi = 1 - (\frac{p_t}{p_{t-T}})^{1/T}$$`
+- Household-specific values are not recommended
+- Minimize the influence of outliers use median value by item
+- However, what about the utility ranking of two households with the same good but living in very different geographical regions?
+
+---
+# Empirical implementation
+
+## case 2
+
+### From the survey:
+- Current Value for each item = `\(p_t^d\)`
+- Age of each item in years = `\(T\)`
+
+### From other sources:
+- Nominal interest rate = `\(r_t\)`
+- Inflation rate = `\(\pi_t\)`
+
+---
+# Empirical implementation
+
+## Solution Case 2
+
+- Calculate the remaining life of each good = `\(2\bar{T}-T\)`
+  - Where `\(\bar{T}\)` is the average age of each durable good. 
+  - `\(2\bar{T}\)` is the average lifetime of each furable good
+  _Assumption:_ purchases are uniformly distributed throughout time. 
+
+- a rough estimate would be
+`$$V_d^h = \sum_{d=1}^D \frac{p_t^d}{2\bar{T}-T}$$`
+
+---
+# Estimation problems
+- Due to high data requirement, measurement errors can be considerable. 
+  - How do we precisely estimate a depreciation rate for all durables?
+- The _user cost_ approach take no account of often considerable transaction costs (e.g., buying and selling durable goods)
+
+---
+# Conclusion
+1. Durable goods
+  - withstand wear and tear or decay
+  - used over a relatively long period
+2. We measure durables because 
+  - Poor households purchase durable goods
+  - Ensure utility consistency
+3. We are interested in the use of a durable good that contributes to welfare
+4. Data requirements are high – simplifying assumptions may be necessary.
+5. Takes no account of often considerable transaction costs
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
