@@ -1,4 +1,4 @@
-# Poverty Measurement Workshop | July, 2018
+# Poverty Measurement Workshop | July, 2019
 
 Poverty economists play a key role in maintaining the quality of poverty data and data collection in the World Bank Group's client countries by providing timely advice and recommendations to national statistics bureaus. These efforts support nationally-owned, transparent systems and methodologies for tracking poverty and other welfare outcomes. 
 
