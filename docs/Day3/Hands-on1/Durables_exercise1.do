@@ -8,7 +8,6 @@
 *===================================================================*/
 clear
 set more off
-set matsize 10000
 global dir "c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day3/Hands-on1"
 
 cd "${dir}"
