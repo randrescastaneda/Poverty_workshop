@@ -30,7 +30,7 @@ The training covers all steps of poverty measurement, from household survey data
       <td> Survey Design (Kristen) </td>
       <td> Introduction to Poverty Measurement (Kristen), Consumption Aggregate Overview (Dhiraj) </td> 
       <td> Consumption Aggregate: Non-Food (Kristen), Consumption Aggregate: Durables (Andres) </td> 
-      <td> Adjustments: Prices & Household Composition (Carolina)</td> 
+      <td> Hands-on Exercise using Stata (Andres) </td> 
       <td> Poverty Indices & Vulnerability (Emmanuel) </td> 
     </tr>
     <tr>
@@ -40,7 +40,7 @@ The training covers all steps of poverty measurement, from household survey data
     <tr>
       <td> 11:00AM </td>
       <td> Sampling (Kristen) </td>
-      <td> Consumption Aggregate Overview (Dhiraj) </td> 
+      <td> Consumption Aggregate Food (Dhiraj) </td> 
       <td> Consumption Aggregate: Housing (Andres)  </td> 
       <td> Poverty Lines (Gabriel) </td> 
       <td> Sensitivity Analysis (Andres) </td> 
@@ -56,8 +56,8 @@ The training covers all steps of poverty measurement, from household survey data
     <tr>
       <td> 1:30PM </td>
       <td> Hands-on Exercise using Stata (Kristen - Sampling) </td>
-      <td> Hands-on Exercise using Stata (Judy - Data Cleaning) </td> 
-      <td> Hands-on Exercise using Stata (Andres)  </td> 
+      <td> Adjustments: Prices & Household Composition (Carolina)  </td> 
+      <td> Hands-on Exercise using Stata (Judy - Data Cleaning  </td> 
       <td> Hands-on Exercise using Stata (Judy - Prices & Household Composition) </td> 
       <td> Hands-on Exercise using Stata (Andres) </td> 
     </tr>
@@ -67,7 +67,7 @@ The training covers all steps of poverty measurement, from household survey data
     </tr>   
     <tr>
       <td> 3:30PM </td>
-      <td> Hands-on Exercise using Stata (Judy - Data Cleaning) </td>
+      <td> Hands-on Exercise using Stata (Judy - Data Cleaning)  </td>
       <td> Hands-on Exercise using Stata (Judy - Consumption Aggregate) </td> 
       <td> Hands-on Exercise using Stata (Andres)   </td> 
       <td> Hands-on Exercise using Stata (Judy - Poverty Lines) </td> 
