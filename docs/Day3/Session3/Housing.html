@@ -4,7 +4,7 @@
     <title>Poverty measurement</title>
     <meta charset="utf-8" />
     <meta name="author" content="R.Andres Castaneda (based on the slides of many others that teach this class before me)" />
-    <meta name="date" content="2019-07-13" />
+    <meta name="date" content="2019-07-14" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
     <link href="libs/remark-css/hygge.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 ## Housing
 ### R.Andres Castaneda (based on the slides of many others that teach this class before me)
 ### The World Bank
-### 2019-07-13
+### 2019-07-14
 
 ---
 
@@ -279,12 +279,12 @@ layout: false
 where, 
 
 `$$t_h = \begin{cases}
-  1 \text{ if }  \sum_{m=1}^{M}f_m(X_{hm})\gamma_{hm} + \sum_{j=1}^{J}f_j(X_{hj})\delta_{hj} + n_h\\ 
+  1 \text{ if }  \sum_{m=1}^{M}f_m(X_{hm})\gamma_{hm} + \sum_{j=1}^{J}f_j(X_{hj})\delta_{hj} + \eta_h\\ 
   0 \text{ otherwise } 
   \end{cases}$$`
 
 - `\(X_{hj}\)` is a vector of explanatory variables which is assumed to determine the tenure status and to be independent of the rent value. 
-- Errors terms `\(\varepsilon_h \text{ and } n_h\)` are jointly distributed as normal. 
+- Errors terms `\(\varepsilon_h \text{ and } \eta_h\)` are jointly distributed as normal. 
 
 ---
 
@@ -337,6 +337,70 @@ class: inverse
 
 ---
 ## theoretical framework
+
+- Population `\(N = [1, 2, ...,n]\)` individuals, where `\(n \in \mathbb{N}\)`
+- Distribution of welfare without rents: `\(x = [x_1, x_2, ..., x_n]\)`, 
+  - `\(x_i\)` level of welfare aggregate individual `\(i\)`.
+  - Assume `\(x_1 \leq x_2 \leq ...\leq x_n\)`
+- Distribution of rents: `\(r = [r_1, r_2, ..., r_n]\)`, 
+
+--
+
+- Three possible scenarios:
+
+    $$\begin{align}
+    A.&amp; \quad r_i^A &amp;= r \quad \forall i &amp;\in N \\\\
+    B.&amp; \quad r_i^B &amp;= \rho x_i \quad \forall i &amp;\in N, \rho \in (0,1) \\\\
+    C.&amp; \quad r_i^C &amp;= \rho_i x_i \quad \forall i &amp;\in N, \rho_i \in (0,1)
+    \end{align}$$`
+
+---
+## theoretical framework
+![Three_scenarios](./img/Three_scenarios.png)
+
+`$$y^j \equiv x = r^j = [x_1 + r_1^j,x_2 + r_2^j, ..., x_n + r_n^j] 
+\quad j \in [A, B, C]$$`
+
+`$$\mu(y^j)&gt;\mu(x)$$`
+
+---
+# Distributional impact of Ren imputation
+We are interested in
+
+- Distribution
+  - Shape
+  - Inequality
+  - Ranking
+  - Shared prosperity
+  
+--
+
+- Poverty
+  - Levels
+  - Profile
+---
+### Different scenarios
+.pull-left[
+Imagine a rent incidence curve:
+
+$$g_q = \frac{y_q^j - x_q}{x_q}= \frac{(x+r^j)_q-x_q}{x_q} $$
+&lt;img src="./img/scenarioB.png" width="800" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="./img/scenarioA.png" width="724" style="display: block; margin: auto;" /&gt;
+&lt;img src="./img/scenarioC.png" width="795" style="display: block; margin: auto;" /&gt;
+]
+
+---
+## Evidence from the literature
+- In general, the literature finds that including rents reduces inequality
+- Mainly developed countries
+- Mostly income as welfare aggregate
+- Some examples:
+  - Guenardand S. Mesple-Somps (2010) for Madagascar and Cote D’Ivoire: the poor are more likely to own their homes
+  - Gasparini and Escudero (2004) for the Greater Buenos Aires area: large proportion of house-owners at the bottom of income distribution, and income elasticity in housing expenditure &lt;1
+  - Törmälehto and Sauli (2010, 2013) for 29 EU-SILC countries: combined effect of the equalizing gap-effect and dis-equalizing re-ranking effect
 
 ---
     </textarea>
