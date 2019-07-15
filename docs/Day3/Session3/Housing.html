@@ -1,29 +1,29 @@
----
-title: "Poverty measurement"
-subtitle: "Housing"
-author: "R.Andres Castaneda (based on the slides of many others that teach this class before me)"
-institute: "The World Bank"
-date: "`r Sys.Date()`"
-output:
-  xaringan::moon_reader:
-    css: ["default", "default-fonts", "hygge"]
-    #css: xaringan-themer.css
-    #css:  ["metropolis.css", "default"]
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
----
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-```
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Poverty measurement</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="R.Andres Castaneda (based on the slides of many others that teach this class before me)" />
+    <meta name="date" content="2019-07-15" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
 
-```{r xaringan-themer, include = FALSE}
-library(xaringanthemer)
-#mono_light(base_color = "#00ADE4")
-mono_light()
-```
+# Poverty measurement
+## Housing
+### R.Andres Castaneda (based on the slides of many others that teach this class before me)
+### The World Bank
+### 2019-07-15
+
+---
+
+
+
+
 
 # Outline
 
@@ -187,12 +187,12 @@ layout: true
 ---
 Housing can be considered as a composite commodity:
 
-$$R_h = R(\mathbf{L}_h, \mathbf{S}_h, \mathbf{N}_h) = \mathbf{R}(\mathbf{X}_h)$$
+`$$R_h = R(\mathbf{L}_h, \mathbf{S}_h, \mathbf{N}_h) = \mathbf{R}(\mathbf{X}_h)$$`
 
 where, 
-- $\mathbf{L}_h$, Location of dwelling
-- $\mathbf{S}_h$, Structural Characteristics
-- $\mathbf{N}_h$, Neighborhood
+- `\(\mathbf{L}_h\)`, Location of dwelling
+- `\(\mathbf{S}_h\)`, Structural Characteristics
+- `\(\mathbf{N}_h\)`, Neighborhood
 
 
 --
@@ -206,11 +206,11 @@ Neighborhood: quality of school, accessibility to public transport, proximity of
 crime rates, poverty rate, traffic congestion, etc.
 
 ---
-- If we have $X_m$ observable attributes for a dwelling, with $m=1,2,...,M$, the most generic functional specification is, 
+- If we have `\(X_m\)` observable attributes for a dwelling, with `\(m=1,2,...,M\)`, the most generic functional specification is, 
 
 --
-$$g(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm}+
-\sum_{m=1}^{M}\sum_{k=1}^{M}f_m(X_{hm})f_k(X_{kh})\gamma_{hmk} + \epsilon_h$$
+`$$g(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm}+
+\sum_{m=1}^{M}\sum_{k=1}^{M}f_m(X_{hm})f_k(X_{kh})\gamma_{hmk} + \epsilon_h$$`
 
 --
 .pull-left[
@@ -234,10 +234,10 @@ population. 𝛽𝛽ℎ𝑚𝑚 and 𝛾𝛾ℎ𝑚𝑚𝑚𝑚 are the paramete
 characteristic 𝑋𝑋𝑚𝑚 and each interacted (transformed) characteristics 𝑋𝑋𝑚𝑚 and 𝑋𝑋𝑘𝑘. Other parametric
 functional forms can be derived as a special case of equation (2)
 ---
-- If we have $X_m$ observable attributes for a dwelling, with $m=1,2,...,M$, the most generic functional specification is, 
+- If we have `\(X_m\)` observable attributes for a dwelling, with `\(m=1,2,...,M\)`, the most generic functional specification is, 
 
-$$g(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm}+
-\sum_{m=1}^{M}\sum_{k=1}^{M}f_m(X_{hm})f_k(X_{kh})\gamma_{hmk} + \varepsilon_h$$
+`$$g(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm}+
+\sum_{m=1}^{M}\sum_{k=1}^{M}f_m(X_{hm})f_k(X_{kh})\gamma_{hmk} + \varepsilon_h$$`
 
 - In the literature, different specifications and estimation methods are found:
   - Linear, semi-log and higher order
@@ -259,7 +259,7 @@ layout: false
 
 ## Hedonic models - Semi-log
 
-$$\ln(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm} + \varepsilon_h$$
+`$$\ln(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm} + \varepsilon_h$$`
 - Pros:
   - The coefficients show approximately the percentage change in the imputed rent for a given unit-change in the covariate
   - It mitigates the heteroskedasticity problem 
@@ -275,16 +275,16 @@ $$\ln(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm} + \varepsilon_h$$
 
 - A plausible solution is to implemente a Heckman two-stages selection model,
 
-$$g(R_h) = alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm} + \varepsilon_h \text{ if }t_h = 1$$
+`$$g(R_h) = alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm} + \varepsilon_h \text{ if }t_h = 1$$`
 where, 
 
-$$t_h = \begin{cases}
+`$$t_h = \begin{cases}
   1 \text{ if }  \sum_{m=1}^{M}f_m(X_{hm})\gamma_{hm} + \sum_{j=1}^{J}f_j(X_{hj})\delta_{hj} + \eta_h\\ 
   0 \text{ otherwise } 
-  \end{cases}$$
+  \end{cases}$$`
 
-- $X_{hj}$ is a vector of explanatory variables which is assumed to determine the tenure status and to be independent of the rent value. 
-- Errors terms $\varepsilon_h \text{ and } \eta_h$ are jointly distributed as normal. 
+- `\(X_{hj}\)` is a vector of explanatory variables which is assumed to determine the tenure status and to be independent of the rent value. 
+- Errors terms `\(\varepsilon_h \text{ and } \eta_h\)` are jointly distributed as normal. 
 
 ---
 
@@ -306,16 +306,16 @@ $$t_h = \begin{cases}
 ---
 
 ## Stratification
-- Define a set of relevant characteristics $(𝑋^𝐴, 𝑋^𝐵, 𝑋^𝐶, …)$
+- Define a set of relevant characteristics `\((𝑋^𝐴, 𝑋^𝐵, 𝑋^𝐶, …)\)`
 - Each characteristic have a set of possible realizations:
-  - $X^A = \{x_1^A,x_2^A,x_3^A\}$ (e.g. Region1, Region2, Region3)
-  - $X^B = \{x_1^B,x_2^B\}$ (e.g. Detached House, Flat)
-  - $X^C = \{x_1^C,x_2^C,x_3^C,x_4^C\}$ (e.g. 1room, 2rooms, 3rooms, >3rooms)
+  - `\(X^A = \{x_1^A,x_2^A,x_3^A\}\)` (e.g. Region1, Region2, Region3)
+  - `\(X^B = \{x_1^B,x_2^B\}\)` (e.g. Detached House, Flat)
+  - `\(X^C = \{x_1^C,x_2^C,x_3^C,x_4^C\}\)` (e.g. 1room, 2rooms, 3rooms, &gt;3rooms)
   
 - From which we can define strata of dwellings with homogeneous characteristics:
-$$(\underbrace{x_1^A,x_1^B, x_1^C}_\text{Stratum1}),
+`$$(\underbrace{x_1^A,x_1^B, x_1^C}_\text{Stratum1}),
 (\underbrace{x_2^A,x_2^B, x_2^C}_\text{Stratum2}),
-(\underbrace{x_3^A,x_3^B, x_3^C}_\text{Stratum3})$$
+(\underbrace{x_3^A,x_3^B, x_3^C}_\text{Stratum3})$$`
 - Take the average rent for each stratum and assign it to each owner-occupied or non-market tenant dwelling in the same stratum
 
 ---
@@ -338,30 +338,30 @@ class: inverse
 ---
 ## theoretical framework
 
-- Population $N = [1, 2, ...,n]$ individuals, where $n \in \mathbb{N}$
-- Distribution of welfare without rents: $x = [x_1, x_2, ..., x_n]$, 
-  - $x_i$ level of welfare aggregate individual $i$.
-  - Assume $x_1 \leq x_2 \leq ...\leq x_n$
-- Distribution of rents: $r = [r_1, r_2, ..., r_n]$, 
+- Population `\(N = [1, 2, ...,n]\)` individuals, where `\(n \in \mathbb{N}\)`
+- Distribution of welfare without rents: `\(x = [x_1, x_2, ..., x_n]\)`, 
+  - `\(x_i\)` level of welfare aggregate individual `\(i\)`.
+  - Assume `\(x_1 \leq x_2 \leq ...\leq x_n\)`
+- Distribution of rents: `\(r = [r_1, r_2, ..., r_n]\)`, 
 
 --
 
 - Three possible scenarios:
 
     $$\begin{align}
-    A.& \quad r_i^A &= r \quad \forall i &\in N \\\\
-    B.& \quad r_i^B &= \rho x_i \quad \forall i &\in N, \rho \in (0,1) \\\\
-    C.& \quad r_i^C &= \rho_i x_i \quad \forall i &\in N, \rho_i \in (0,1)
-    \end{align}$$
+    A.&amp; \quad r_i^A &amp;= r \quad \forall i &amp;\in N \\\\
+    B.&amp; \quad r_i^B &amp;= \rho x_i \quad \forall i &amp;\in N, \rho \in (0,1) \\\\
+    C.&amp; \quad r_i^C &amp;= \rho_i x_i \quad \forall i &amp;\in N, \rho_i \in (0,1)
+    \end{align}$$`
 
 ---
 ## theoretical framework
 ![Three_scenarios](./img/Three_scenarios.png)
 
-$$y^j \equiv x = r^j = [x_1 + r_1^j,x_2 + r_2^j, ..., x_n + r_n^j] 
-\quad j \in [A, B, C]$$
+`$$y^j \equiv x = r^j = [x_1 + r_1^j,x_2 + r_2^j, ..., x_n + r_n^j] 
+\quad j \in [A, B, C]$$`
 
-$$\mu(y^j)>\mu(x)$$
+`$$\mu(y^j)&gt;\mu(x)$$`
 
 ---
 # Distributional impact of Ren imputation
@@ -384,18 +384,12 @@ We are interested in
 Imagine a rent incidence curve:
 
 $$g_q = \frac{y_q^j - x_q}{x_q}= \frac{(x+r^j)_q-x_q}{x_q} $$
-```{r,  fig.align='center',  echo=FALSE}
-knitr::include_graphics('./img/scenarioB.png')
-```
+&lt;img src="./img/scenarioB.png" width="800" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
-```{r,  fig.align='center',  echo=FALSE}
-knitr::include_graphics('./img/scenarioA.png')
-```
-```{r,  fig.align='center', echo=FALSE}
-knitr::include_graphics('./img/scenarioC.png')
-```
+&lt;img src="./img/scenarioA.png" width="724" style="display: block; margin: auto;" /&gt;
+&lt;img src="./img/scenarioC.png" width="795" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -405,7 +399,7 @@ knitr::include_graphics('./img/scenarioC.png')
 - Mostly income as welfare aggregate
 - Some examples:
   - Guenardand S. Mesple-Somps (2010) for Madagascar and Cote D’Ivoire: the poor are more likely to own their homes
-  - Gasparini and Escudero (2004) for the Greater Buenos Aires area: large proportion of house-owners at the bottom of income distribution, and income elasticity in housing expenditure <1
+  - Gasparini and Escudero (2004) for the Greater Buenos Aires area: large proportion of house-owners at the bottom of income distribution, and income elasticity in housing expenditure &lt;1
   - Törmälehto and Sauli (2010, 2013) for 29 EU-SILC countries: combined effect of the equalizing gap-effect and dis-equalizing re-ranking effect
 
 ---
@@ -415,22 +409,16 @@ knitr::include_graphics('./img/scenarioC.png')
 
 ---
 ### Fixed poverty line
-```{r Fixed_povline,  fig.align='left',  echo=FALSE}
-knitr::include_graphics('./img/Fixed_povline.png')
-```
+&lt;img src="./img/Fixed_povline.png" width="1673" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ---
 ### Fixed poverty line, by regions
 
-```{r Fixed_povline2,  fig.align='left',  echo=FALSE}
-knitr::include_graphics('./img/Fixed_povline2.png')
-```
+&lt;img src="./img/Fixed_povline2.png" width="1801" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ---
 ### Adjusted poverty lines
-```{r adj_povline,  fig.align='left',  echo=FALSE}
-knitr::include_graphics('./img/adj_povline.png')
-```
+&lt;img src="./img/adj_povline.png" width="1737" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ---
 ## Poverty - Summary of results
@@ -441,3 +429,94 @@ knitr::include_graphics('./img/adj_povline.png')
 ---
 class: center
 ![thank_you](https://media.giphy.com/media/10dvjmLNHQ6O3e/giphy.gif)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
