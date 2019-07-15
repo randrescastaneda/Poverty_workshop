@@ -57,7 +57,7 @@ The training covers all steps of poverty measurement, from household survey data
       <td> 1:30PM </td>
       <td> Hands-on Exercise using Stata (Kristen - Sampling) </td>
       <td> Adjustments: Prices & Household Composition (Carolina)  </td> 
-      <td> Hands-on Exercise using Stata (Judy - Data Cleaning  </td> 
+      <td> Hands-on Exercise using Stata (Judy - Consumption Aggregate)  </td> 
       <td> Hands-on Exercise using Stata (Judy - Prices & Household Composition) </td> 
       <td> Hands-on Exercise using Stata (Andres) </td> 
     </tr>
@@ -68,7 +68,7 @@ The training covers all steps of poverty measurement, from household survey data
     <tr>
       <td> 3:30PM </td>
       <td> Hands-on Exercise using Stata (Judy - Data Cleaning)  </td>
-      <td> Hands-on Exercise using Stata (Judy - Consumption Aggregate) </td> 
+      <td> Hands-on Exercise using Stata (Judy - Data Cleaning) </td> 
       <td> Hands-on Exercise using Stata (Andres)   </td> 
       <td> Hands-on Exercise using Stata (Judy - Poverty Lines) </td> 
       <td> Hands-on Exercise using Stata (Andres), Discussion & Wrap-Up (Kristen) </td> 
