@@ -42,7 +42,7 @@ The training covers all steps of poverty measurement, from household survey data
       <td> Sampling (Kristen) </td>
       <td> Consumption Aggregate Food (Dhiraj) </td> 
       <td> Consumption Aggregate: Housing (Andres)  </td> 
-      <td> Poverty Lines (Gabriel) </td> 
+      <td> Hands-on Exercise using Stata (Judy - Prices & Household Composition)  </td> 
       <td> Sensitivity Analysis (Andres) </td> 
     </tr>
     <tr>
@@ -58,7 +58,7 @@ The training covers all steps of poverty measurement, from household survey data
       <td> Hands-on Exercise using Stata (Kristen - Sampling) </td>
       <td> Adjustments: Prices & Household Composition (Carolina)  </td> 
       <td> Hands-on Exercise using Stata (Judy - Consumption Aggregate)  </td> 
-      <td> Hands-on Exercise using Stata (Judy - Prices & Household Composition) </td> 
+      <td> Poverty Lines (Gabriel)  </td> 
       <td> Hands-on Exercise using Stata (Andres) </td> 
     </tr>
     <tr>
