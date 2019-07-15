@@ -30,7 +30,7 @@ The training covers all steps of poverty measurement, from household survey data
       <td> Survey Design (Kristen) </td>
       <td> Introduction to Poverty Measurement (Kristen), Consumption Aggregate Overview (Dhiraj) </td> 
       <td> Consumption Aggregate: Non-Food (Kristen), Consumption Aggregate: Durables (Andres) </td> 
-      <td> Hands-on Exercise using Stata (Andres) </td> 
+      <td> Hands-on Exercise using Stata (Andres - Housing) </td> 
       <td> Poverty Indices & Vulnerability (Emmanuel) </td> 
     </tr>
     <tr>
@@ -57,7 +57,7 @@ The training covers all steps of poverty measurement, from household survey data
       <td> 1:30PM </td>
       <td> Hands-on Exercise using Stata (Kristen - Sampling) </td>
       <td> Adjustments: Prices & Household Composition (Carolina)  </td> 
-      <td> Hands-on Exercise using Stata (Judy - Consumption Aggregate)  </td> 
+      <td> Hands-on Exercise using Stata (Judy - Food & Non-Food)  </td> 
       <td> Poverty Lines (Gabriel)  </td> 
       <td> Hands-on Exercise using Stata (Andres) </td> 
     </tr>
@@ -68,8 +68,8 @@ The training covers all steps of poverty measurement, from household survey data
     <tr>
       <td> 3:30PM </td>
       <td> Hands-on Exercise using Stata (Judy - Data Cleaning)  </td>
-      <td> Hands-on Exercise using Stata (Judy - Data Cleaning) </td> 
-      <td> Hands-on Exercise using Stata (Andres)   </td> 
+      <td> Hands-on Exercise using Stata (Judy - Food & Non-Food) </td> 
+      <td> Hands-on Exercise using Stata (Andres - Durables)   </td> 
       <td> Hands-on Exercise using Stata (Judy - Poverty Lines) </td> 
       <td> Hands-on Exercise using Stata (Andres), Discussion & Wrap-Up (Kristen) </td> 
     </tr>
