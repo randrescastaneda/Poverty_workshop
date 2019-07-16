@@ -1,4 +1,4 @@
-*! dtapaths: $dir="c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day3/Hands-on2"
+*! dtapaths: $dir="c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day4/Hands-on_housing"
 *! json: stata-autocomplete.json
 *! autoupdate: true
 
@@ -10,7 +10,7 @@
 * Change the following line to match your folder's path
 clear
 set more off
-global dir "c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day3/Hands-on2"
+global dir "c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day4/Hands-on_housing"
 
 cd "${dir}"
 
@@ -170,7 +170,7 @@ replace rent_hat2b = rent      if renter == 1 & rent != .
 replace rent_hat2b = rent_self if renter == 0 & rent != .
 la var rent_hat2b "Straight Retransformation"
 
-gen     rent_hat2c = exp(yhatraw+(e(rmse)^2/2))
+gen     rent_hat2c = exp(yhatraw+((e(rmse)^2)*.5))
 replace rent_hat2c = rent      if renter == 1 & rent != .
 replace rent_hat2c = rent_self if renter == 0 & rent != .
 la var  rent_hat2c "Naive Retransformation"
@@ -250,14 +250,15 @@ heckman `ln_rent' `var_rent', select(`var_sel' = `var_ind')
 
 * Heckman prediction when dependent variable is log(Cameron and Trivedi Chap 16 (p548 Table 16.7.2))
 predict probpos, psel 
-predict x1b1, xbsel 
-predict x2b2, xb 
+predict x1b1, xbsel // xb of probit 
+predict x2b2, xb    // xb of actual regression 
 scalar sig2sq = e(sigma)^2 
 scalar sig12sq = e(rho)*e(sigma)^2 
 display "sigma1sq = 1" " sigma12sq = " sig12sq " sigma2sq = " sig2sq 
 
 * Potential rent that everybody would pay on the market: E(y|X)
 gen herent_hat1b = exp(x2b2 + 0.5*(sig2sq))*(1 - normal(-x1b1-sig12sq)) 
+gen herent_hat1b_2 = exp(x2b2 + 0.5*(sig2sq))*(normal(x1b1+sig12sq))   // equiv
 
 * Rent for tenants corrected by selection: E(y|X, y > 0)
 gen herent_hat1  = herent_hat1b/probpos
