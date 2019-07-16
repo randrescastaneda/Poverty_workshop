@@ -1,6 +1,6 @@
 theme: jekyll-theme-leap-day
 title: "Poverty Measurement Workshop - July 2019"
 description: "Training for poverty economists"
-baseurl: "/docs" # the subpath of your site, e.g. "/blog"
-url: "https://worldbank.github.io/Poverty_workshop_2019" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl: "/Poverty_workshop_2019" # the subpath of your site, e.g. "/blog"
+url: "https://worldbank.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 #logo: "/images/so-simple-site-logo.png" # path of site logo, e.g. "/assets/images/logo.png"
