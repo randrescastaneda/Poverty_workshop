@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Sensitivity analysis of poverty</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="R.Andres Castaneda (based on the slides of many others that teach this class before me)" />
+    <meta name="date" content="2019-07-16" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sensitivity analysis of poverty
+### R.Andres Castaneda (based on the slides of many others that teach this class before me)
+### The World Bank
+### 2019-07-16
+
+---
+
+
+
+
+
+# Why checking for robustness?
+
+- What do you think are the main reasons why poverty may not be robust?
+
+--
+1. Arbitrariness of the choice of Poverty Index
+2. Arbitrariness of the choice of Poverty Line
+3. Equivalence of scale used
+4. Sampling error
+
+--
+
+- What else? 
+
+---
+# Elasticity of FGT poverty measure with respect to per capita consumption
+
+`$$\eta = \frac{\Delta\%FGT_\alpha(x,z)}{\Delta\%PCE}$$`
+--
+
+- Shift the distribution without changing its relative shape
+
+- Poverty line remains constant
+
+- What would happen if there is a concentration of marginal poor around the poverty line?
+
+--
+
+- .red[What are the main reasons why the consumption aggreagte may change?]
+
+---
+## Graphical representation of change in PCE
+&lt;img src="./img/pce_shift.png" width="1500" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
+## The same is true if we change the poverty lines
+- Each component of the absolute poverty line (i.e. CBN) is a function of several variables that affects results
+  
+  - Food component
+    
+    - “Reference” Group could lead to different poverty lines even using the same method;
+    
+    - Nutritional requirement
+    
+    - Average or median of the “reference” population not only for quantities but also for prices
+  
+  - Nonfood component
+    
+    - How do we define the interval (“close”) to the poverty line?
+    
+    - Lower poverty line &amp; upper poverty line
+---
+## Graphical representation of change in poverty lines
+&lt;img src="./img/pl_shift.png" width="1500" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
+# Poverty Dominance Analysis
+
+- Dominance analysis is a comparison of multiple distributions. 
+
+- It allows us to compare results for all poverty lines when comparing across time/subpopulations
+
+- Three relevant poverty curves:
+
+  - Poverty incidence curves
+
+  - Poverty deficit curves
+
+  - Poverty severity curves
+---
+## Poverty incidence curves
+&lt;img src="./img/pov_inc_curve.png" width="1629" style="display: block; margin: auto auto auto 0;" /&gt;
+
+???
+The height is the headcount ratio when the poverty line is set at a particular level of the welfare aggregate (i.e. income or consumption). In other words, it is the CDF
+
+---
+
+layout: true
+## 1. First Order Dominance
+
+---
+
+- If the poverty incidence curve for distribution A is above that for B for all poverty lines (up to `\(z_{max}\)`)...
+--
+
+- ... there is more poverty in A than in B for all poverty measures and all poverty lines (up to `\(z_{max}\)`)
+
+---
+### Graphically it looks like this
+&lt;img src="./img/fst_ord_dom.png" width="1500" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
+### but, 
+- What if the poverty incidence curves intersect?
+
+--
+
+&lt;img src="./img/not_fst_ord_dom.png" width="1500" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
+### but, 
+- What if the poverty incidence curves intersect?
+
+  - Ambiguous poverty ranking
+
+- What could you do?
+
+  - Restrict range of poverty lines
+
+  - Restrict class of poverty measures
+---
+
+### Poverty Deficit curves
+
+- Area under poverty incidence curve
+
+- The height is proportional to the poverty gap measure, the larger the height the larger the poverty gap measure for a given poverty line or level of welfare aggregate
+
+- Each point gives average poverty gap = poverty gap index times the poverty line `\(z\)`
+
+---
+### Graphically, it look like this
+&lt;img src="./img/pov_deficit_curve.png" width="1828" style="display: block; margin: auto;" /&gt;
+
+layout: false
+---
+layout: true
+## 2. Second Order Dominance
+
+---
+
+- If the poverty deficit curve for distribution A is above that for B for all poverty lines (up to `\(z_{max}\)`)...
+
+- ...there is more poverty in A than in B for all poverty measures which are strictly decreasing and weakly---convex in welfare aggregate (i.e. consumption or income) of the poor such as the Poverty Gap and Severity but not Headcount Ratio
+
+---
+&lt;img src="./img/def_curve1.png" width="70%" style="display: block; margin: auto;" /&gt;
+---
+### But, 
+- What if the poverty deficit curves intersect?
+
+--
+&lt;img src="./img/def_curve2.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+### But, 
+- What if the poverty deficit curves intersect?
+
+  - Ambiguous poverty ranking
+--
+- What could you do?
+
+  - Restrict range of poverty lines
+
+  - Restrict class of poverty measures
+--
+- .blue[... And so on and so forth with poverty severity]
+
+---
+
+layout: false 
+
+# Poverty dominance analysis - Recommendations
+
+- First Order: construct the poverty incidence curves up to highest admissible poverty line for each - distribution
+  - Do not cross `\(\rightarrow\)` Unambiguous comparison (2nd and 3rd Order holds too)
+  - Do cross `\(\rightarrow\)` perform Second Order Dominance test
+- Second Order: build poverty deficit curves and restrict range of proper measures
+  - Do not cross `\(\rightarrow\)` Unambiguous comparison for higher order poverty indexes 
+  - Do cross `\(\rightarrow\)` perform Third Order Dominance Test
+- Third Order:  create poverty severity curves 
+  - Do not cross `\(\rightarrow\)` Unambiguous comparison
+  - Do cross `\(\rightarrow\)` nothing left to do
+
+---
+layout: true
+
+# Equivalence of Scales
+---
+
+- Two options for the arbitrary approack
+  - OECD - Modified scale
+
+`$$AE_{OECD} = 1 + 0.5 \times (N_A - 1) + 0.3 \times N_C$$`
+Where, 
+  - `\(N_A =\)`  Total number of adults
+  - `\(N_C =\)`  Totol number of children
+    
+  - LSMS (National Research Council '95)
+
+`$$AE_{LSMS} = (N_A - \alpha N_C)^\theta$$`
+
+Where, 
+  - `\(\alpha =\)` Adult equivalent `\(\in (0,1)\)`
+  - `\(\theta =\)` Economies of scale `\(\in (0,1)\)`
+---
+
+## To check the sensitivity of the paremeters
+
+- Select a "pivot" household which is unaffected by changes in parameters
+
+  - It could be any _household composition_ that would be chosen as modal type: `\((N_{A0};N_{A0})\)`
+  - Ex: Two adults and two children
+
+`$$x^* = 
+\frac{x}
+     {(N_A + \alpha N_C)^\theta} 
+\frac{(N_{A0} + \alpha N_{C0})^\theta}
+     {(N_{A0} + N_{C0})}$$`
+
+- `\(x^*\)` is always equal to per capita expenditure for the reference household because `\(N_A = N_{A0} \text{ and } N_C = N_{C0}\)`
+
+- For all other household, 
+  - `\(1^{st}\)` term if expenditure per adult equivalent
+  - `\(2^{nd}\)` term is a constant ($N_{A0} \text{ and } N_{C0}$ and fixed)
+
+---
+
+&lt;img src="./img/adult_equiv_comparisons.png" width="1567" style="display: block; margin: auto auto auto 0;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
