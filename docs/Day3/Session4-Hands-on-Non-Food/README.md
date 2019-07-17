@@ -12,6 +12,7 @@
 1. Do not duplicate items: Sometimes items are listed in multiple sections
 2. Certain categories should not be included
 3. Make sure that aggregate is in the same units (ex. annualized, per capita)
+4. Data needs to be reshaped to hid level
 
 
  ## Checks
