@@ -29,11 +29,11 @@ mono_light()
 
 - Key References
 
-- WHy is housing relevant?
+- Why is housing relevant?
 
 - Theoretical justification for imputing rents
 
-- Different approaches to imput housing flow of service
+- Different approaches to input housing flow of service
 
 - Distributional Impacts
 
@@ -85,13 +85,13 @@ layout: false
 - In other cases, households receive housing free of charge or at subsidized rates by their employer, friends, relatives, government or other entities (non-market tenants). 
 
 ---
-# Few housholds rent their dwelling
+# Few households rent their dwelling
 ![rent_X_countries](./img/rent_X_countries.png)
 
 ---
 ## Theoretical justification for imputing rents
 
-- Welfare measure (i.e., expenditure) must be consistent accross households in order to make comparisons among themselves
+- Welfare measure (i.e., expenditure) must be consistent across households in order to make comparisons among themselves
 
 --
 
@@ -103,7 +103,7 @@ Imagine two identical households with the same consumption pattern.
 ---
 layout: true
 
-## Different approaches to imput housing flow of service (i.e., imputing rent)
+## Different approaches to input housing flow of service (i.e., imputing rent)
 
 ---
 ### .blue[Self-assessment]
@@ -132,17 +132,17 @@ Use the value reported by owners and non-market tenants when they answer "if you
 
 ### Payment approach
 
-- use information about the out-ot-pocket expenditure faced by households. **For owners** it would be the mortgage, interest payments, taxes, insurance, maintenance and repairs. 
+- use information about the out-of-pocket expenditure faced by households. **For owners** it would be the mortgage, interest payments, taxes, insurance, maintenance and repairs. 
   
 ---
 ### External sources
 
-- Other household surveys, adminustrative register, newspaper or internet offer notices, multiple listing datasets, motgage transctions, key informat evaluations. 
+- Other household surveys, administrative register, newspaper or internet offer notices, multiple listing datasets, mortgage transactions, key informant evaluations. 
 
 ---
 
 layout: false
-## Different approaches to imput housing flow of service (i.e., imputing rent)
+## Different approaches to input housing flow of service (i.e., imputing rent)
 
 .blue[
 
@@ -172,7 +172,7 @@ layout: false
 ## Econometric models
 
 - Hedonic model
-  - Theory and generi form
+  - Theory and generic form
   - Semi-log
   - Heckman Selection
 
@@ -277,7 +277,7 @@ $$\ln(R_h) = \alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm} + \varepsilon_h$$
 ## Hedonic models - Heckman Selection
 - IF the choice between owning or renting is not independent from the characteristics of the dwelling, the OLS estimators in the rental market might be inconsistent. 
 
-- A plausible solution is to implemente a Heckman two-stages selection model,
+- A plausible solution is to implement a Heckman two-stages selection model,
 
 $$g(R_h) = alpha_0 + \sum_{m=1}^{M}f_m(X_{hm})\beta_{hm} + \varepsilon_h \text{ if }t_h = 1$$
 where, 
@@ -423,7 +423,7 @@ knitr::include_graphics('./img/scenarioC.png')
 
 - Effects when poverty line is fixed
 
-- Effects when poveryt lines is adjusted
+- Effects when poverty lines is adjusted
 
 ---
 ### Fixed poverty line
@@ -450,6 +450,7 @@ knitr::include_graphics('./img/adj_povline.png')
 - Poverty changes very little when the poverty line is adjusted by adding imputed rent in the non-food component 
 - With an adjusted poverty line poverty tends to slightly  decrease for tenants and to increase in rural areas (particularly in Iraq and Peru)
 - The profile of the poor does not seem to change, both keeping fixed and varying the poverty line, according to the imputation method used
+
 ---
 class: center
 ![thank_you](https://media.giphy.com/media/10dvjmLNHQ6O3e/giphy.gif)
