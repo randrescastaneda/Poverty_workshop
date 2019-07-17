@@ -31,9 +31,11 @@ mono_light()
 
 - WHy is housing relevant?
 
-- 
+- Theoretical justification for imputing rents
 
+- Different approaches to imput housing flow of service
 
+- Distributional Impacts
 
 ---
 layout: true
@@ -364,19 +366,25 @@ $$y^j \equiv x = r^j = [x_1 + r_1^j,x_2 + r_2^j, ..., x_n + r_n^j]
 $$\mu(y^j)>\mu(x)$$
 
 ---
-# Distributional impact of Ren imputation
+# Distributional impact of Rent imputation
 We are interested in
 
 - Distribution
+
   - Shape
+
   - Inequality
+
   - Ranking
+
   - Shared prosperity
   
 --
 
 - Poverty
+
   - Levels
+
   - Profile
 ---
 ### Different scenarios
@@ -410,7 +418,9 @@ knitr::include_graphics('./img/scenarioC.png')
 
 ---
 ## Poverty indices
+
 - Effects when poverty line is fixed
+
 - Effects when poveryt lines is adjusted
 
 ---
