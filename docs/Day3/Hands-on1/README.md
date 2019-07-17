@@ -1,3 +1,5 @@
+# Dofile: 02-NonFood.do
+
 ## Non-Food (excluding Durables and Housing)
 
 1. Education
