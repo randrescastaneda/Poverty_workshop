@@ -1,12 +1,12 @@
 ---
 title: "Poverty measurement"
 subtitle: "Durable Goods"
-author: "R.Andres Castaneda (based on the slides of many others that teach this class before me)"
+author: "R.Andrés Castañeda (based on the slides of many others that teach this class before me)"
 institute: "The World Bank"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    css: ["default", "default-fonts", "hygge"]
+    css: ["default", "default-fonts", "hygge", "xaringan-themer.css"]
     #css: xaringan-themer.css
     #css:  ["metropolis.css", "default"]
     lib_dir: libs
@@ -22,7 +22,8 @@ options(htmltools.dir.version = FALSE)
 ```{r xaringan-themer, include = FALSE}
 library(xaringanthemer)
 #mono_light(base_color = "#00ADE4")
-mono_light()
+mono_light(base_color = "#23395b")
+#mono_light()
 ```
 
 # Outline
@@ -89,15 +90,29 @@ Example: coal is highly durable in a physical sense but it can be burnt just onc
 ---
 # Why measure durables?
 
+--
+
 - Long-lived goods (automobiles, appliances, furniture) have a positive and significant impact on living standards.
+
   - Time-saving (e.g. household appliances, transport means)
+
   - Entertainment (TV, DVD, etc) and communications (Phones)
+
+--
 
 - Poor households sometimes devote some expenditures to non-food items, including durable goods (Haughton and Khandker, 2009)
 
+--
+
 - Their inclusion ensures utility consistency.
 
+--
+
 - Failure to include durable goods may underestimate inequality (to be discussed later).
+
+--
+
+.blue[Do you think of any other reason?]
 
 ---
 # Essence of the problem
@@ -119,16 +134,18 @@ There is an inconsistency between the _reference period_ and the period of time 
 
 According to Deaton (1997, 151), "_we need to decide the reference period for welfare measurement, whether someone is poor if they go without adequate consumption or income for a week, a month, or a year_"
 
+--
 - The same reference period must be applied to all the components of the welfare aggregate. 
+--
 
 - Even if durables are not purchased during the period of reference, households derived _utility_ from those durable goods that were bought in previous periods. 
 
 ---
 # How to measure durables
 
-- Market price of a durable good is not adequate becuase the it corresponds to the value of its _entire_ economic life, while what we need is the value _of the use_ during the period of reference.
+- Market price of a durable good is not adequate because the it corresponds to the value of its _entire_ economic life, while what we need is the value _of the use_ during the period of reference.
 
-- **Principle**: we need to estimate the _consumption flow_ of durable goods, which is the benefit accrouing to the household from the ownership of durable goods, limited to the reference period. 
+- **Principle**: we need to estimate the _consumption flow_ of durable goods, which is the benefit accruing to the household from the ownership of durable goods, limited to the reference period. 
 
 ![durables_life](./img/durables_life.png)
 
@@ -200,7 +217,7 @@ $$k_{v,t}^s(a) = \begin{cases}
 
 --
 
-- This approach assigns the household the entire stream of current and future productibve services of the durable in year $t$. 
+- This approach assigns the household the entire stream of current and future productive services of the durable in year $t$. 
 
 ???
 
@@ -250,7 +267,7 @@ Where, $r_t$ is the real interest rate in period $t$.
 
 ???
 
-The user cost can be ingterpreted as the opportunity cost of owning for one period the durable good instead of selling it at the beginning of period $t$. 
+The user cost can be interpreted as the opportunity cost of owning for one period the durable good instead of selling it at the beginning of period $t$. 
 
 ---
 ```{r dg_reports_data, echo = FALSE}
@@ -285,7 +302,7 @@ Calculate the (annual) user cost of a watch that you purchased at $25 a year ago
 
 ### User cost of durables
 
-The previous eqution could be rewritten as follow for the total number of durables, 
+The previous equation could be rewritten as follow for the total number of durables, 
 
 $$UC=\sum_{d=1}^D(S_{td}\times p_{td}(i_t - \pi_t + \delta_d))$$
 
@@ -303,20 +320,26 @@ $D$: Total number of durables considered
 
 ---
 
-# components of the user cost
+# Components of the user cost
 
 - **Nominal interest rate** $(i_t)$: There are many options. The most common are:
-  - Interest rate on safe assets like yeilds of governmnet bonds (If one assumes that risk aversion and wealth are negatively correlate (Arrow 1971) ). 
+
+  - Interest rate on safe assets like yields of government bonds (If one assumes that risk aversion and wealth are negatively correlate (Arrow 1971) ). 
+
   - Interest rates on loans of durable goods like cars or other major durables. 
+
 --
 
 - **Quantity of the durable** $(S_t)$: Comes from the survey. Sometimes it is not available. 
+
 --
 
 - **Price of the durable at the time of purchase** $(p_t)$: Comes from the survey. 
+
 --
 
 - **Inflation rate** $(\pi_t)$: Generally, the CPI is used.
+
 --
 
 - **Depreciation rate** $(\delta)$: .red[Tricky part that will be discussed bellow]
@@ -324,14 +347,18 @@ $D$: Total number of durables considered
 ---
 # Depreciation rate
 
-In general, the relationship between the price in $t$ of thea  good $v$-year old, $(p_{v,t})$, and its market value as new, $(p_{0,t})$, may be discribed as, 
+In general, the relationship between the price in $t$ of the  good $v$-year old, $(p_{v,t})$, and its market value as new, $(p_{0,t})$, may be described as, 
 
 $$p_{v,t} = \prod_{i=1}^v(1- \delta_i)p_{0,t}$$
 
 - This relationship depends on the sequence $\{\delta_i\}_{i=1}^v$, which has many ways of calculate it. 
+
  - Geometric depreciation model
+
  - Straight line depreciation
+
  - "light bulb" depreciation
+
  - Mixture depreciation model
 
 ???
@@ -340,14 +367,18 @@ For a longer discussion of all the methods see Amendola and Vecchi (2014).
 ---
 # Depreciation rate
 
-In general, the relationship between the price in $t$ of thea  good $v$-year old, $(p_{v,t})$, and its market value as new, $(p_{0,t})$, may be discribed as, 
+In general, the relationship between the price in $t$ of the  good $v$-year old, $(p_{v,t})$, and its market value as new, $(p_{0,t})$, may be described as, 
 
 $$p_{v,t} = \prod_{i=1}^v(1- \delta_i)p_{0,t}$$
 
 - This relationship depends on the sequence $\{\delta_i\}_{i=1}^v$, which has many ways of calculate it. 
+
  - .red[Geometric depreciation model]
+
  - Straight line depreciation
+
  - "light bulb" depreciation
+
  - Mixture depreciation model
 
 ???
@@ -355,7 +386,7 @@ For a longer discussion of all the methods see Amendola and Vecchi (2014).
 
 ---
 ## Empirical implementation of the .blue[geometric depreciation model]
-- We assume that the depreciation rate is constant over time, so $\delta_i = \delta$ for every $i$.
+We assume that the depreciation rate is constant over time, so $\delta_i = \delta$ for every $i$.
 
 ## case 1
 
@@ -375,6 +406,7 @@ Estimation of depreciation rate:
 
 $$\delta - \pi = 1 - (\frac{p_{v,t}}{p_{o,t}})^\frac{1}{v}$$
 - In order to minimize the influence of any outliers in the data, it is better to use the _median_ value of depreciation rates of all the goods collected in the survey. 
+
 - Thus, household-specific values are not recommended. 
 
 ---
@@ -382,11 +414,15 @@ $$\delta - \pi = 1 - (\frac{p_{v,t}}{p_{o,t}})^\frac{1}{v}$$
 
 ### From the survey:
 - Current Value for each item = $p_t^d$
+
 - Age of each item in years = $T$
+
 - .red[value of the item when new is not available]
 
 ### From other sources:
+
 - Nominal interest rate = $r_t$
+
 - Inflation rate = $\pi_t$
 
 ---
@@ -405,19 +441,29 @@ $$\delta - \pi = 1 - (\frac{p_{v,t}}{2\bar{v} - v})^\frac{1}{v}$$
 ---
 # Estimation problems
 - Due to high data requirement, measurement errors can be considerable. 
+
   - How do we precisely estimate a depreciation rate for all durables?
+
 - The _user cost_ approach take no account of often considerable transaction costs (e.g., buying and selling durable goods)
 
 ---
 # Conclusion
 1. Durable goods
+
   - withstand wear and tear or decay
+
   - used over a relatively long period
+
 2. We measure durables because 
+
   - Poor households purchase durable goods
+
   - Ensure utility consistency
+
 3. We are interested in the use of a durable good that contributes to welfare
+
 4. Data requirements are high – simplifying assumptions may be necessary.
+
 5. Takes no account of often considerable transaction costs
 
 ---
