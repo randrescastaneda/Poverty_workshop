@@ -77,6 +77,10 @@ The materials on this site aim to help enhance the quality of advice and integra
 
 # Sessions
 
+## Sampling
+There would not be any poverty measurement without data to analyze. In order to have a precise and effective poverty measurement, practitioners and researchers must rely on quality datasets. This session gives an overview on how sampling errors affect the quality of our estimates. Predicting the sampling errors of poverty surveys require knowledge of different sampling techniques. We will learn these techniques, and how to implement them in Stata.
+The hands-on training session gives an overview of the statistical foundations of sampling, and discusses the different possible random sampling techniques and how to calculate sampling errors and weights.
+
 ## Economic Mobility
 The Poverty and Shared Prosperity Report will henceforth be published on a two-year cycle. The next issue will come out in the Fall 2018. This report will be focused on the measurement of global poverty and shared prosperity, and introduce some of the complementary indicators recommended by the Atkinson Commission on Global Poverty, which are intended to broaden the World Bank's conception of poverty. 
 This presentation shows preliminary findings from the empirical part of the report.
@@ -90,8 +94,11 @@ This session will present and discuss Ravallion's conceptual framework. and it w
 
 
 ## Consumption Aggregate – Housing
+
+[presentation](https://worldbank.github.io/Poverty_workshop_2019/Day3/Session3-ConsAgg_housing/Housing.html#1)
+
 Housing is often on of the most problematic components of the household consumption aggregate. As with durable goods, the appropriate measure of housing consumption is a measure in monetary terms of the flow of services that the household receives from occupying its dwelling.  If rental markets are perfect and all households rent their dwellings, the rent paid is the obvious choice to include in the consumption aggregate. But this is not often the case, either because rents are subsidized, or because households own their dwellings. Even if the dwelling is owned by the household or received free of charge or with a subsidized rent, an estimate of the annual rental equivalent must be included, when possible, in the consumption aggregate.
-After presenting motivations and a brief literature review on the problem of rent imputation, this session will focus on the different methods to estimate rent for home-owners. It ends with examples of empirical applications of the different methodologies and their impacts on poverty measures.​
+After presenting motivations and a brief literature review on the problem of rent imputation, this session will focus on the different methods to estimate rent for home-owners. It ends with examples of empirical applications of the different methodologies and their impacts on poverty measures.
 
 ## Consumption Aggregate – Durables
 
@@ -99,11 +106,6 @@ After presenting motivations and a brief literature review on the problem of ren
 
 Durable goods are relevant components of the welfare aggregate. One of their characteristics is that they last for several years and it is clearly not their expenditure on purchases the appropriate measure of their consumption. Instead, it is the value of services that the household receives from all durables goods in its possession over the relevant time period.
 This session presents first a brief discussion of the theoretical framework. It follows with an introduction to several methods of estimating the value of services from durable goods conditioned on the information available in the household survey. It ends with examples of empirical applications of the different methodologies and their impacts on poverty measures.
-
-## Sampling
-There would not be any poverty measurement without data to analyze. In order to have a precise and effective poverty measurement, practitioners and researchers must rely on quality datasets. This session gives an overview on how sampling errors affect the quality of our estimates. Predicting the sampling errors of poverty surveys require knowledge of different sampling techniques. We will learn these techniques, and how to implement them in Stata.
-The hands-on training session gives an overview of the statistical foundations of sampling, and discusses the different possible random sampling techniques and how to calculate sampling errors and weights.
-
 
 ## Adjustment – Prices
 Expenditure is utility consistent, and therefore a good indicator for individuals' welfare, only if a set of hypothesis is satisfied. One of the hypotheses is that individuals must face identical prices. This is often not the case. Prices usually vary both over time and across space: for instance, the same good can cost more in urban as opposed to rural areas, or more at the end of the year than the beginning of the year. In order to have meaningful utility comparisons, prices need to be adjusted to take into account these differences.
@@ -122,7 +124,9 @@ Once welfare aggregate and poverty lines have been computed, all information nee
 The session is organized as follows. After a short introduction to several poverty indices, the FGT class is defined. For each index of the FGT class, pros and cons will be discussed and explained with several examples. Finally, a specific and desirable feature of the FGT index, decomposability, will be introduced and discussed.
 
 ## Sensitivity
+
+[presentation](https://worldbank.github.io/Poverty_workshop_2019/Day5/Session2_sensitivity/sensitivity.html#1)
+
 Many arbitrary choices are made in the process of measuring poverty: for instance, the choice of the poverty index, the setting of the poverty line, and the definition of the equivalence of scale. In order to draw robust poverty comparison, it is important to perform some sensitivity checks to the alternative assumptions.
 This session will cover the main sensitivity analysis tools, with a particular focus on poverty dominance analysis.
-
 
