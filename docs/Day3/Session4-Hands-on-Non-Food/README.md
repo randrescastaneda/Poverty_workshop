@@ -20,3 +20,8 @@
 2. Outlier checks
 3. Unit checks
 
+# Dofile: 02-NonFood - exercise.do
+
+1. Reshape the file "Section 13 Part B-B1 Nonfood freq purchases.dta" to be at the household level
+2. Outlier check
+3. Replacement rules
