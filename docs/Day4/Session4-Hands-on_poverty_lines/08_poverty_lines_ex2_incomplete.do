@@ -5,7 +5,7 @@ set more off
 * 8 - Poverty Lines: Exercise 2                  					 *   
 *=====================================================================
 
-global dir "C:\Users\wb436991\Dropbox\Collaborazioni\WB\Poverty_Training_1504\Sessions\8_Poverty_Lines\Class_folder"
+global dir "L:\Poverty_Training\08_Poverty_Line"
 cd "$dir"
 
 
