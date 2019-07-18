@@ -20,6 +20,7 @@ foreach var of varlist q* {
 *        di in ye "Dropping the following variables: " in green "q`coic'   x`coic'"
 	}
 }
+*
 describe, short
 
 * Calculate UNIT VALUES for all commodities 
@@ -64,7 +65,7 @@ foreach var of varlist uv* {
 *		di in ye "Dropping variables: " in green "uv`coic' " "x`coic' " "q`coic' "
 	}
 }
-
+*
 capture drop N*
 capture drop outuv*
 capture drop lnuv*
@@ -139,7 +140,7 @@ COMPLETE
 	di in ye "Replacing by nation"
 	replace uvc`coic' = median_`coic'    if uvc`coic' == . 
 }	
-
+*
 * Calculate P_0 (national *median* unit values by coicop)
 capture drop pz*
 foreach var of varlist uvc* {
@@ -147,20 +148,20 @@ foreach var of varlist uvc* {
 	qui su old_uv`coic' [aw = hweight], detail
 	gen pz`coic' = r(p50)
 }
-
+*
 * Check no missing value are in national median prices
 foreach var of varlist pz* {
 	local coic = real(substr("`var'",3,.))
 	assert ~mi(pz`coic') == 1
 }
-
+*
 * Calculate BUDGET SHARES by household
 egen sumx = rowtotal(x*)
 foreach var of varlist x* {
 	local coic = real(substr("`var'",2,.))
 	gen w`coic' = x`coic'/sumx
 }
-
+*
 * Check no BUDGET SHARE is missing
 foreach var of varlist w* {
 	local coic = real(substr("`var'",2,.))
