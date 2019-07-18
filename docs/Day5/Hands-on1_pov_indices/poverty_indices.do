@@ -27,12 +27,12 @@ datalibweb, type(GMD) country(PRY) year(2016) clear
 *Density function and main statistics
 *-------------------------------------------------------------------------------
 
-*kdensity welfare [aw=weight]
-*
-*gen ln_welfare = ln(welfare) 
-*kdensity ln_welfare [aw=weight]
-*
-*twoway (kdensity ln_welfare [aw=weight] if urban==1) /*
+kdensity welfare [aw=weight]
+
+gen ln_welfare = ln(welfare) 
+kdensity ln_welfare [aw=weight]
+
+twoway (kdensity ln_welfare [aw=weight] if urban==1) /*
 */		(kdensity ln_welfare [aw=weight] if urban==0), /*
 */     legend(label(1 "urban") label(2 "rural")) 
 
