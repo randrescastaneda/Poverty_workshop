@@ -4,7 +4,7 @@ set more off
 * HANDS-ON TRAINING ON POVERTY MEASUREMENT                   	 	 * 
 * 8 - Poverty Lines: Exercise 1                  					 *   
 *=====================================================================
-global dir "C:\Users\wb436991\Dropbox\Collaborazioni\WB\Poverty_Training_1504\Sessions\8_Poverty_Lines\Class_folder"
+global dir "c:\Users\WB334843\GitHub\Poverty_workshop_2019\docs\Day4\Session4-Hands-on_poverty_lines\"
 cd $dir
 
 *=====================================================================
@@ -14,7 +14,7 @@ cd $dir
 use 08_ex_1_consume.dta, clear
 
 * Nutritional Basket matrix
-matrix calories = 1386\139\153\39\180\14\51\62\82\6
+matrix calories = 1386\139\153\39\180\14\51\62\6\82
 matrix list calories
 
 matrix quantity = 397\40\40\58\20\12\48\177\20\20
