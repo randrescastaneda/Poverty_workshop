@@ -4,7 +4,7 @@
 *								    								*
 *===================================================================*/
 
-cd "C:\Users\wb316966\Projects\Poverty group\Poverty Measurement\Training\do\Spatial price adjustment\data"
+cd "c:\Users\WB334843\GitHub\Poverty_workshop_2019\docs\Day4\Session2-Hands-on_price_hhd_composition\"
 use xsectall_nw, clear
 
 * Drop commodities for which quantities are zero and/or missing
