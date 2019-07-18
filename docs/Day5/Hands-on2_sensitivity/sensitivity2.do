@@ -69,3 +69,19 @@ gen double welfare_ppp = welfare/cpi2011/icp2011/365
 *-------------------------------------------------------------------*
 	twoway(line cumul_urb cumul_rur welfare_ppp) if welfare_ppp < 100
 	
+exit 
+><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
+
+* another way
+
+datalibweb, type(GMD) country(PRY) year(2016) clear
+
+gen double welfare_ppp = welfare/cpi2011/icp2011/365
+
+cumul welfare_ppp [w = weight ] if urban == 1, gen(cumul_urb)
+cumul welfare_ppp [w = weight ] if urban == 0, gen(cumul_rur)
+
+label var cumul_urb "CDF's urban population"
+label var cumul_rur "CDF's rural areas"
+twoway(line cumul_urb cumul_rur welfare_ppp, sort) if welfare_ppp < 100
+
