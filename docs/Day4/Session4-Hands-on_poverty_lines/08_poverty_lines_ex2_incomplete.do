@@ -5,7 +5,7 @@ set more off
 * 8 - Poverty Lines: Exercise 2                  					 *   
 *=====================================================================
 
-global dir "L:\Poverty_Training\08_Poverty_Line"
+global dir "c:\Users\WB334843\GitHub\Poverty_workshop_2019\docs\Day4\Session4-Hands-on_poverty_lines\"
 cd "$dir"
 
 
