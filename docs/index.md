@@ -130,3 +130,8 @@ The session is organized as follows. After a short introduction to several pover
 Many arbitrary choices are made in the process of measuring poverty: for instance, the choice of the poverty index, the setting of the poverty line, and the definition of the equivalence of scale. In order to draw robust poverty comparison, it is important to perform some sensitivity checks to the alternative assumptions.
 This session will cover the main sensitivity analysis tools, with a particular focus on poverty dominance analysis.
 
+## Global Poverty
+[presentation](https://worldbank.github.io/Poverty_workshop_2019/Day5/Session3_Global%20poverty/Global_Poverty.html#1)
+
+
+
