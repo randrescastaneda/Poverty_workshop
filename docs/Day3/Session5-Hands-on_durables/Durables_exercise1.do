@@ -1,4 +1,4 @@
-*! dtapaths: $dir="c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day3/Hands-on1"
+*! dtapaths: $dir="c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day3/Session5-Hands-on_durables"
 *! json: stata-autocomplete.json
 *! autoupdate: true
 
@@ -8,7 +8,7 @@
 *===================================================================*/
 clear
 set more off
-global dir "c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day3/Hands-on1"
+global dir "c:/Users/wb384996/OneDrive - WBG/Various/Poverty_workshop/docs/Day3/Session5-Hands-on_durables"
 
 cd "${dir}"
 
@@ -41,8 +41,8 @@ use durables_ex.dta, clear
 mata {
 	C = st_matrix("CPI")
 	nC = rows(C)
-	C2 = CPI[|2,1\.,.|]
-	C1 = CPI[|1,1\nC-1,.|]
+	C2 = C[|2,1\.,.|]
+	C1 = C[|1,1\nC-1,.|]
 	pi = mean((C2 - C1):/C1)
 
 	st_local("pi", strofreal(pi))
@@ -87,7 +87,8 @@ gen double drate = 1 - (val_td/presval)^(1/puryear)	/*drate = depreciation rate*
 label var drate "depreciation rate"
 
 * Inspect depreciation rates by item
-table durable_code [aw=weight], c(mean drate median drate min drate max drate count drate) format(%9.4f)
+table durable_code [aw=weight], format(%9.4f) /*
+*/ c(mean drate median drate min drate max drate count drate) 
 
 * Inspect depreciation rates by item and subregion
 levelsof durable_code, local(durables)
@@ -200,12 +201,18 @@ foreach var of varlist xcf* {
 *--------------------------------------------------------------------*
 
 * 1.4 National median depreciation rate by item
-egen      pce_durables1 = rowtotal(xcf1_1 xcf1_2 xcf1_3 xcf1_4 xcf1_5 xcf1_6 xcf1_7)
+egen      pce_durables1 = rowtotal(xcf1_*)
+
+/*
+ds xcf1_*
+local xcf1vars = "`r(varlist)'"
+egen      pce_durables1 = rowtotal(`xcf1vars')*/
+
 label var pce_durables1 "Consumption flow from all durables (1,000 $/person/month)"
 egen pce1 = rsum(pce_food pce_non_food pce_durables1)
 
 * A1.1.4 Provincial median depreciation rate by item
-egen      pce_durables2 = rowtotal(xcf2_1 xcf2_2 xcf2_3 xcf2_4 xcf2_5 xcf2_6 xcf2_7)
+egen      pce_durables2 = rowtotal(xcf2_*)
 label var pce_durables2 "Consumption flow from all durables (1,000 $/person/month)"
 egen pce2 = rsum(pce_food pce_non_food pce_durables2)
 
@@ -218,6 +225,14 @@ egen pce3 = rsum(pce_food pce_non_food pce_durables3)
 * 1.5 Calculate Headcount ratio using the national poverty line 
 *--------------------------------------------------------------------*
 // I recommend apoverty
+
+local ssccommands "povdeco apoverty"
+foreach ssccommand of local ssccommands {
+	cap which `ssccommand' 
+	if (_rc != 0) {
+		ssc install `ssccommand'
+	}
+}
 
 * 1.5	
 povdeco pce1 [aw = weight*hsize], varpl(z_pl)
