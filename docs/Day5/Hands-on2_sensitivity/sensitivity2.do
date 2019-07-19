@@ -28,7 +28,7 @@ gen double welfare_ppp = welfare/cpi2011/icp2011/365
 *Cumulative Density Function urban areas (CDF)
 
 *Cumulative sum of population
-	gen cumul_urb = sum(weight) if urb_aux == 1
+	gen cumul_urb = sum(weight) if urban == 1
 
 *Save total population as a local
 	sum weight if urb_aux == 1
@@ -36,8 +36,8 @@ gen double welfare_ppp = welfare/cpi2011/icp2011/365
 *Cumulative sum of population normalized by total population 
 
 *(it varies between 0 and 1)
-	replace   cumul_urb = cumul_urb/`urban_tot' if urb_aux == 1
-	label var cumul_urb "CDF's urban population"
+	gen       cdf_urb = cumul_urb/`urban_tot' if urban == 1
+	label var cdf_urb "CDF's urban population"
 
 *-------------------------------------------------------------------*
 * Rural Areas
@@ -54,20 +54,38 @@ gen double welfare_ppp = welfare/cpi2011/icp2011/365
 		local rural_tot = r(sum)
 
 	*Cumulative sum of population
-		gen cumul_rur = sum(weight) if rur_aux == 1
+		gen cumul_rur = sum(weight) if urban == 0 
 
 	*Cumulative sum of population normalized by total population 
 	*it varies between 0 and 1
-		replace   cumul_rur = cumul_rur/`rural_tot' if rur_aux == 1
-		label var cumul_rur "CDF's rural areas"
+		gen       cdf_rur = cumul_rur/`rural_tot' if urban == 0 
+		label var cdf_rur "CDF's rural areas"
 
 	* Checking results:
-		sum cumul_urb cumul_rur
+		sum cdf_urb cdf_rur
 
 *-------------------------------------------------------------------*
 * Graphs
 *-------------------------------------------------------------------*
-	twoway(line cumul_urb cumul_rur welfare_ppp) if welfare_ppp < 100
+	twoway(line cdf_urb cdf_rur welfare_ppp) if welfare_ppp < 100
+
+
+*-------------------------------------------------------------------*
+* deficit
+*-------------------------------------------------------------------*
+
+* Given that deficit is the integral of the CDF 
+ sort welfare_ppp
+ gen int_cfd_urb = sum(cdf_urb)
+ gen int_cfd_rur = sum(cdf_rur)
+
+
+twoway scatter int_cfd_urb int_cfd_rur  welfare_ppp /*
+*/ if welfare_ppp < 100,  c(l l) m(i i)  /*
+*/  clwidth(medthick thin) /*
+*/ title(“Poverty Deficit Curves urban and rural) 
+
+
 	
 exit 
 ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
