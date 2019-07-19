@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Global Poverty</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="R.Andrés Castañeda (based on the slides Dean Jolliffe and Espen Prydz)" />
+    <meta name="date" content="2019-07-18" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Global Poverty
+## Poverty measurement workshop
+### R.Andrés Castañeda (based on the slides Dean Jolliffe and Espen Prydz)
+### The World Bank
+### 2019-07-18
+
+---
+
+
+
+
+
+## Measuring Global Poverty: Basic Approach followed by the World Bank
+
+Focus tends to be on the international poverty line, but ... 
+--
+
+There are two main ingredients,
+1. Indicator of wellbeing (income or consumption)
+
+2. Selection of poverty line, expresses in common currency
+
+--
+- These ingredients are aggregated to a summary of index for a _common_ year
+  - Global headcount of extreme poverty in 2012 (Ferreira et al., 2015)
+
+- Key Assumptions 
+  - Measure of wellbeing comparable across countries and over time
+  - Common poverty line is comparable across countries and over time. 
+
+---
+
+## National household surveys – foundation of the global poverty estimate
+
+- NSOs collect household survey data for national poverty policies, not global poverty measurement. 
+  
+  - Typically reflecting country context, some countries collect data on consumption, expenditure, and/or income
+  
+  - Data is collected at the household level, differing adjustments for adult-equivalence (and/or economies of - scale)
+
+- Some efforts to standardize
+
+  - Some regional efforts to bring more uniformity of instrument
+
+  - WB staff often ‘teach’ Deaton-Zaidi guidelines for consumption
+
+  - PovCal requests data in per-capita terms
+
+- But, important comparability issues remain…
+
+---
+## Comparability issue: Income and consumption
+
+
+.pull-left[
+- Income and consumption are different concepts (savings, volatility)
+
+- Surveys often have zero incomes; seldom zero consumption.
+  - Zeros exert significant influence on extreme poverty measures; more so as goal of eliminating poverty nears. 
+  - Example: Poverty in Mexico 2012 (at $1.25/day, 2005 PPPs) was 3% based on income, 1% based on consumption
+
+]
+
+.pull-right[
+&lt;img src="./img/mexico.png" width="1025" style="display: block; margin: auto;" /&gt;
+]
+---
+## Comparability issue: How consumption is measured differs (both between and within countries)
+
+- Differences in questionnaire affect consumption:
+  
+  - Diaries vs. recall
+  
+  - Nonfood varies (some include rent, durables, and/or health; others do not) 
+  
+  - Count of pre-coded food items affects aggregate
+  
+  - Recall frame affects responses (e.g.,. Telescoping, “Great Indian Debate”)
+
+- Many other important differences: Timing of fieldwork, Training, Supervision, Cleaning/editing rules; 
+- etc. 
+
+???
+- INDIA EXAMPLE: Since 1950s - India used uniform 30-day recall period (URP), then switched recall frame - twice. In 2009, switched to “modified mixed reference period” (MMRP), short for some, long for others.
+    - MMRP-based consumption gives poverty rate of 12 percent for 2011/12.
+    - URP results in poverty rate of 21 percent for 2011/12 (used in WB estimate)
+    - Difference of 109 million poor people in India’s and global estimates. 
+---
+## Comparability (cont.): Measurement methods differ
+
+.pull-left[
+&lt;img src="./img/recall_period.png" width="1140" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+.pull-right[
+- Household consumption surveys vary widely (over time &amp; countries)
+- Beegle et al. (2012) provide experimental evidence on the effect
+- Exact same instrument except increase recall period 
+  - =&gt; 12% drop in avg consumption
+  - =&gt; 8 point (%) increase in pov
+- Same recall period, but long list collapsed to comprehensive groups 	=&gt; 24% drop in avg consumption
+	=&gt; 32% drop in shared prosperity
+- Research can inform questionnaire design &amp; provide bridges across otherwise non-comparable data
+]
+
+---
+
+## Complementary data needed to estimate poverty
+
+Household surveys are necessary but not sufficient. We also need
+
+- Purchasing power parity (PPP) indices
+
+--
+
+- Population (census) data
+
+--
+
+- Inflation and national accounts growth (consumption or GDP)
+
+???
+PPP: Make poverty lines and welfare comparable across countries
+
+  - To estimate total number of poor
+  - population frame for survey sample
+
+  - Inflation data to keep measures of wellbeing in real terms
+  - NA data to "line up" surveys into reference years
+  
+---
+## Data Details: Consumption vectors scaled to common reference year
+
+.pull-left[
+- Most countries do not collect household surveys on annual basis, need to line up data to common point in time.
+- If a survey is not available in the reference year, closest survey(s) are extrapolated to reference year using NAS growth rates.
+  - GDP growth used in AFR, Private Consumption Expenditures used in other regions.
+
+]
+.pull-right[
+&lt;img src="./img/reference_year.png" width="816" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+---
+## Global prospects for 2030
+
+&lt;img src="./img/forecast_2030.png" width="2300" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
+## Data and Assumptions
+
+- Are the measures of economic wellbeing comparable?
+
+- Is the value of the international poverty line ($1.90) comparable across countries?
+
+- Is the value of the $1.90-line comparable with the previous international poverty line ($1.25)?
+
+- And a couple of other interesting data questions….
+
+---
+class: center
+![thank_you](https://media.giphy.com/media/JVXU0uN1l6wdq/giphy.gif)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
